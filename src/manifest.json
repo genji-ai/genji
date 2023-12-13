@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Genji - AI Browser Assistant",
+  "version": "1.0",
+  "description": "Automate the browser using a visual AI assistant",
+  "author": "Genji",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'"
+  },
+  "action": {
+    "default_popup": "src/popup.html"
+  },
+  "permissions": ["tabs", "storage"],
+  "background": {
+    "service_worker": "src/background_scripts/background.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content_scripts/content.ts", "src/content_scripts/assistant.tsx"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["style.css", "imgs/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
