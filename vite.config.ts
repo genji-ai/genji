@@ -25,7 +25,7 @@ export default defineConfig({
     svgr(),
     webExtension({
       manifest: 'src/manifest.json',
-      additionalInputs: ['src/lib/user.css', 'src/vimium/content_scripts/vimium.css'],
+      additionalInputs: ['src/styles/user.css', 'src/styles/vimium.css'],
       watchFilePaths: tree('src'),
       disableAutoLaunch: true,
     }),

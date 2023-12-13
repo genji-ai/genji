@@ -2,6 +2,8 @@
 
 Genji is an AI browser assistant that controls your browser to perform the requested tasks. This repo houses the chrome extension codebase that runs on your browser.
 
+![Genji UI image](resources/chat_interface.svg)
+
 ## Install (Chrome Web Store)
 
 Install the latest artifact from the [Chrome Web Store](https://chromewebstore.google.com/detail/genji-ai-browser-assistan/jgoncjpgeegjhdecejnfnpjnfmhohgdf)
