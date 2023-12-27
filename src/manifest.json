@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Genji - AI Browser Assistant",
-  "version": "1.0",
+  "version": "1.0.2",
   "description": "Automate the browser using a visual AI assistant",
   "author": "Genji",
   "icons": {

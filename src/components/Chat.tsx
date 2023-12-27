@@ -2,6 +2,7 @@ import { KeyboardEvent, useEffect, useRef, useState } from 'react'
 import { styled } from 'styled-components'
 import GenjiLarge from '../imgs/genji-large.svg?react'
 import HideIcon from '../imgs/hide.svg?react'
+import QuestionIcon from '../imgs/question.svg?react'
 import Shuriken from '../imgs/shuriken.svg?react'
 import { Genji } from '../lib/genji'
 import { GenjiMessage } from '../lib/messages/schema'
@@ -59,7 +60,7 @@ const TrayContainer = styled(DisplayContainer)`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: right;
+  justify-content: left;
   column-gap: 1rem;
 `
 
@@ -314,10 +315,16 @@ export function Chat({ tabID, existingMessages, pendingTaskExists, genjiEnabled 
             />
           </MessageBoxContainer>
           <TrayContainer displayProps={{ rect: chatRects.tray, zIndex: '3' }}>
-            <HideIcon
+            <QuestionIcon
               width={0.6 * chatRects.tray.h}
               height={0.6 * chatRects.tray.h}
               style={{ cursor: 'pointer' }}
+              onClick={() => window.open('https://discord.gg/aC2FCDQt72')}
+            />
+            <HideIcon
+              width={0.6 * chatRects.tray.h}
+              height={0.6 * chatRects.tray.h}
+              style={{ cursor: 'pointer', marginLeft: 'auto' }}
               onClick={() => setVisible(!visible)}
             />
           </TrayContainer>
