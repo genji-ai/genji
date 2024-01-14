@@ -37,7 +37,7 @@ export type TaskStep = {
 
 export type ActionResponse = {
   action: NavigateAction | ClickAction | TypeAction | DoneAction
-  explanation: string
+  chatMessage: string
 }
 
 export type ErrorResponse = {
