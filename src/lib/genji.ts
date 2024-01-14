@@ -157,6 +157,9 @@ class GenjiDefinition {
     }
     if (['input', 'select', 'object', 'embed'].includes(clickEl.nodeName.toLowerCase())) {
       clickEl.focus()
+    } else if (clickEl.nodeName.toLowerCase() == 'a') {
+      window.location.href = clickEl.href
+      return
     }
     DomUtils.simulateClick(clickEl, {})
   }
