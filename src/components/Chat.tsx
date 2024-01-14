@@ -180,7 +180,7 @@ export function Chat({ tabID, existingMessages, pendingTaskExists, genjiEnabled 
         if (request.update == 'add-step') {
           await MessageStorage.addMessage(request.task.tabID, {
             sender: 'genji',
-            message: request.task.steps[request.task.steps.length - 1].response.explanation,
+            message: request.task.steps[request.task.steps.length - 1].response.chatMessage,
           })
         } else if (request.update == 'finalize-task') {
           if (request.task.status === 'cancelled') {

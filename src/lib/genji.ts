@@ -71,11 +71,17 @@ class GenjiDefinition {
   }
 
   async getNextAction(task: Task): Promise<ActionResponse> {
-    const annotatedEncodedImg = await this.capture()
+    let annotatedEncodedImg
+    try {
+      annotatedEncodedImg = await this.capture()
+    } catch (e) {
+      annotatedEncodedImg = null
+    }
     this.removeMarkers()
 
     const tab = await chrome.runtime.sendMessage({ type: 'sender-query' } as GenjiMessage)
     const requestBody = {
+      version: 'v1.0.3',
       taskID: task.id,
       description: task.description,
       currentTab: {
